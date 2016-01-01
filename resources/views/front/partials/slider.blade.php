@@ -16,7 +16,7 @@
                     <a href="{{ url('promosi/'. $p->promotion_slug) }}"><div class="bg-overlay"></div></a>
                 </div>
             @empty
-                <div class="carousel-item align-items-center active" style="background-image:url('{!! asset('assets/images/coworking/bg01.jpg') !!}');">
+                <div class="carousel-item align-items-center" style="background-image:url('{!! asset('assets/images/coworking/bg01.jpg') !!}');">
                     <a href="#"><div class="bg-overlay"></div></a>
                 </div>
             @endforelse
