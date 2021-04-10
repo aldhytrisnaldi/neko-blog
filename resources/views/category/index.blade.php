@@ -7,7 +7,7 @@
             <h1>Category</h1>
             @can('category-create')
                 <div class="section-header-button">
-                    <a href="#" class="btn btn-icon btn-left btn-primary btn-sm">
+                    <a href="{{route('category.create')}}" class="btn btn-icon btn-left btn-primary btn-sm">
                         <i class="fas fa-plus"></i> Add Category
                     </a>
                 </div>

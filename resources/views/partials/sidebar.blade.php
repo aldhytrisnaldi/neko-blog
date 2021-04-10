@@ -10,19 +10,9 @@
     <ul class="sidebar-menu">
         <li class="menu-header">Dashboard</li>
         <li class="{{ request()->is('dashboard') ? 'active' : '' }}"><a class="nav-link" href="{{ url('/dashboard') }}"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
-
-        <li class="{{
-            // request()->is('article') ? 'dropdown active' : request()->is('article/create') ? 'dropdown active' : request()->is('article/*/edit') ? 'dropdown active' :
-            request()->is('category') ? 'dropdown active' : request()->is('category/create') ? 'dropdown active' : request()->is('category/*/edit') ? 'dropdown active' : 'dropdown'
-        }}">
-            <a href="#" class="nav-link has-dropdown"><i class="fas fa-book"></i><span>Post</span></a>
-            <ul class="dropdown-menu">
-                {{-- <li class="{{ request()->is('article') ? 'active' : request()->is('article/create') ? 'active' : request()->is('article/*/edit') ? 'active' : '' }}"><a class="nav-link" href="{{ url('/article') }}">Article</a></li> --}}
-                @can('category-list')
-                    <li class="{{ request()->is('category') ? 'active' : request()->is('category/create') ? 'active' : request()->is('category/*/edit') ? 'active' : '' }}"><a class="nav-link" href="{{ url('/category') }}">Category</a></li>
-                @endcan
-            </ul>
-        </li>
+        @can('category-list')
+            <li class="{{ request()->is('category') ? 'active' : request()->is('category/create') ? 'active' : request()->is('category/*/edit') ? 'active' : '' }}"><a class="nav-link" href="{{ url('/category') }}"><i class="fas fa-folder"></i> <span>Category</span></a></li>
+        @endcan
 
         @hasanyrole('superadmin')
             <li class="{{

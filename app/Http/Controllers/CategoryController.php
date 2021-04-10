@@ -10,6 +10,9 @@ class CategoryController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('permission:category-list|category-create|category-update|category-delete');
+        $this->middleware('permission:category-create', ['only' => ['create','store']]);
+        $this->middleware('permission:category-update', ['only' => ['edit','update']]);
+        $this->middleware('permission:category-delete', ['only' => ['destroy', 'show']]);
     }
     public function index()
     {
@@ -18,7 +21,7 @@ class CategoryController extends Controller
 
     public function create()
     {
-        //
+        return view('category.create');
     }
 
     public function store(Request $request)
