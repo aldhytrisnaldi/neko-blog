@@ -15,10 +15,14 @@ Route::middleware('auth')->get('logout', function() {
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
+//
+Route::resource('category', 'CategoryController');
+
 // USER
 Route::resource('user', 'UserController');
 
 // ROLE
 Route::resource('role', 'RoleController');
 
+// HOME
 Route::get('/home', 'HomeController@index')->name('home');

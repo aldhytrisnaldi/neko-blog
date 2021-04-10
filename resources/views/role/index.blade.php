@@ -32,7 +32,7 @@
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $r->name }}</td>
-                                            <td class="text-right" width="120px]">
+                                            <td class="text-right" width="120px">
                                                 <a class="btn btn-primary btn-icon icon-left btn-sm" href="{{ route('role.edit',$r->id) }}">Update</a>
                                                 <a class="btn btn-danger btn-icon icon-left btn-sm" href="{{ route('role.destroy',$r->id) }}" id="role-delete">Delete</a>
                                             </td>

@@ -10,11 +10,11 @@ class PermissionSeeder extends Seeder
         $permissions = [
             'category-list',
             'category-create',
-            'category-edit',
+            'category-update',
             'category-delete'
-         ];
+        ];
 
-         foreach ($permissions as $permission) {
+        foreach ($permissions as $permission) {
             Permission::create(['name' => $permission]);
         }
     }
