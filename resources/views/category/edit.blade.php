@@ -1,10 +1,10 @@
 @extends('layouts.app')
-@section('title', 'Create Category')
+@section('title', 'Update Category')
 
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Create Category</h1>
+            <h1>Update Category</h1>
         </div>
         <div class="section-body">
             <div class="row">
@@ -13,7 +13,7 @@
                         <div class="card-header">
                             <h4>Form Category</h4>
                         </div>
-                        {!! Form::open(array('route' => 'category.store', 'method' => 'POST')) !!}
+                        {!! Form::model($category, ['method' => 'PATCH', 'route' => ['category.update', $category->id]]) !!}
                             <div class="card-body">
                                 <div class="row">
                                     <div class="form-group col-12">
@@ -21,7 +21,7 @@
                                         {!! Form::text('category_name', null, array('placeholder' => 'Category Name', 'class' => 'form-control')) !!}
                                     </div>
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-primary">Create</button>
+                                        <button type="submit" class="btn btn-primary">Update</button>
                                     </div>
                                 </div>
                             </div>

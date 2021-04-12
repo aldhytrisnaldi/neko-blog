@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -16,7 +17,8 @@ class CategoryController extends Controller
     }
     public function index()
     {
-        return view('category.index');
+        $category   = Category::latest('id')->get();
+        return view('category.index', compact('category'));
     }
 
     public function create()
@@ -26,26 +28,43 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $validation = $request->validate([
+            'category_name'     => 'required|unique:categories',
+        ]);
+
+        Category::create($validation);
+
+        return redirect('/category')->with('success', 'Success create category');
     }
 
-    public function show($id)
-    {
-        //
-    }
 
     public function edit($id)
     {
-        //
+        $category   = Category::findOrFail($id);
+        return view('category.edit', compact('category'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $validation = $request->validate([
+            'category_name' => 'required'
+        ]);
+
+        Category::whereId($id)->update($validation);
+
+        return redirect('/category')->with('success', 'Success update category');
     }
 
     public function destroy($id)
     {
-        //
+        Category::findOrFail($id);
+    }
+
+    public function show($id)
+    {
+        $category   = Category::findOrFail($id);
+        $category->delete();
+
+        return redirect('/category')->with('success','Success delete category');
     }
 }

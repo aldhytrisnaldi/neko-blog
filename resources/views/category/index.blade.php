@@ -31,19 +31,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Kesehatan</td>
-                                        <td>Aldhy Trisnaldi</td>
-                                        <td class="text-right" width="120px">
-                                            @can('category-update')
-                                                <a class="btn btn-primary btn-icon icon-left btn-sm" href="#">Update</a>
-                                            @endcan
-                                            @can('category-delete')
-                                                <a class="btn btn-danger btn-icon icon-left btn-sm" href="#" id="category-delete">Delete</a>
-                                            @endcan
-                                        </td>
-                                    </tr>
+                                    @foreach ($category as $key => $c)
+                                        <tr>
+                                            <td>{{ $key+1 }}</td>
+                                            <td>{{ $c->category_name }}</td>
+                                            <td><h6><span class="badge badge-primary">{{ $c->createdBy->username }}</span></h6></td>
+                                            <td class="text-right" width="120px">
+                                                @can('category-update')
+                                                    <a class="btn btn-primary btn-icon icon-left btn-sm" href="{{ route('category.edit', $c->id) }}">Update</a>
+                                                @endcan
+                                                @can('category-delete')
+                                                    <a class="btn btn-danger btn-icon icon-left btn-sm" href="{{ route('category.destroy', $c->id) }}" id="category-delete">Delete</a>
+                                                @endcan
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
