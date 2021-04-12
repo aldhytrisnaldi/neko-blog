@@ -15,8 +15,11 @@ Route::middleware('auth')->get('logout', function() {
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
-//
+// CATEGORY
 Route::resource('category', 'CategoryController');
+
+// PROMOTION
+Route::resource('promotion', 'PromotionController');
 
 // USER
 Route::resource('user', 'UserController');

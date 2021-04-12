@@ -10,6 +10,10 @@
     <ul class="sidebar-menu">
         <li class="menu-header">Dashboard</li>
         <li class="{{ request()->is('dashboard') ? 'active' : '' }}"><a class="nav-link" href="{{ url('/dashboard') }}"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+        @can('promotion-list')
+            <li class="{{ request()->is('promotion') ? 'active' : request()->is('promotion/create') ? 'active' : request()->is('promotion/*/edit') ? 'active' : '' }}"><a class="nav-link" href="{{ url('/promotion') }}"><i class="fas fa-ad"></i> <span>Promotion</span></a></li>
+        @endcan
+
         @can('category-list')
             <li class="{{ request()->is('category') ? 'active' : request()->is('category/create') ? 'active' : request()->is('category/*/edit') ? 'active' : '' }}"><a class="nav-link" href="{{ url('/category') }}"><i class="fas fa-folder"></i> <span>Category</span></a></li>
         @endcan

@@ -11,7 +11,11 @@ class PermissionSeeder extends Seeder
             'category-list',
             'category-create',
             'category-update',
-            'category-delete'
+            'category-delete',
+            'promotion-list',
+            'promotion-create',
+            'promotion-update',
+            'promotion-delete',
         ];
 
         foreach ($permissions as $permission) {
