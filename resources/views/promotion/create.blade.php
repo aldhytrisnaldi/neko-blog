@@ -22,7 +22,11 @@
                                     </div>
                                     <div class="form-group col-6">
                                         <label for="promotion_name">Promotion Images</label><span class="text-danger pl-1">*</span>
-                                        {!! Form::file('promotion_images', array('class' => 'form-control')) !!}
+                                        {!! Form::file('promotion_images', array('class' => 'form-control', 'id' => 'promotion_images')) !!}
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Images Preview</label>
+                                        <img class="img-fluid pad" id="preview" width="450px" height="auto">
                                     </div>
                                     <div class="col-12">
                                         <button type="submit" class="btn btn-primary">Create</button>
