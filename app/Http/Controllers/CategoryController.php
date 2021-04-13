@@ -15,6 +15,7 @@ class CategoryController extends Controller
         $this->middleware('permission:category-update', ['only' => ['edit','update']]);
         $this->middleware('permission:category-delete', ['only' => ['destroy', 'show']]);
     }
+
     public function index()
     {
         $category   = Category::latest('id')->get();

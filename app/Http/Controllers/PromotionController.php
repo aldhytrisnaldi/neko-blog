@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class PromotionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:promotion-list|promotion-create|promotion-update|promotion-delete');
+        $this->middleware('permission:promotion-create', ['only' => ['create','store']]);
+        $this->middleware('permission:promotion-update', ['only' => ['edit','update']]);
+        $this->middleware('permission:promotion-delete', ['only' => ['destroy', 'show']]);
+    }
+
     public function index()
     {
         $promotion  = Promotion::latest('id')->get();
@@ -21,11 +30,21 @@ class PromotionController extends Controller
 
     public function store(Request $request)
     {
-        $validation = $request->validate([
-            'promotion_name'    => 'required|unique:promotions'
+        $request->validate([
+            'promotion_name'    => 'required|unique:promotions',
+            'promotion_images'  => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-        Promotion::create($validation);
+        $image = $request->file('promotion_images');
+
+        $images_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images/promotion'), $images_name);
+        $data = array(
+            'promotion_name'    =>   $request->promotion_name,
+            'promotion_images'  =>   $images_name
+        );
+
+        Promotion::create($data);
 
         return redirect('/promotion')->with('success', 'Success create promotion');
     }
@@ -39,11 +58,31 @@ class PromotionController extends Controller
 
     public function update(Request $request, $id)
     {
-        $validation = $request->validate([
-            'promotion_name'    => 'required'
-        ]);
+        $images_name = $request->hidden_image;
+        $image = $request->file('promotion_images');
+        if($image != '')
+        {
+            $request->validate([
+                'promotion_name'    =>  'required',
+                'promotion_images'  =>  'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            ]);
 
-        Promotion::whereId($id)->update($validation);
+            $images_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/promotion'), $images_name);
+        }
+        else
+        {
+            $request->validate([
+                'promotion_name'    =>  'required',
+            ]);
+        }
+
+        $data = array(
+            'promotion_name'    =>   $request->promotion_name,
+            'promotion_images'  =>   $images_name
+        );
+
+        Promotion::whereId($id)->update($data);
 
         return redirect('/promotion')->with('success', 'Succress update promotion');
     }
