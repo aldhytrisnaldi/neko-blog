@@ -32,20 +32,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Kini anda bisa melakukan program hamil di ...</td>
-                                        <td><h6><span class="badge badge-primary">Kesehatan</span></h6></td>
-                                        <td><h6><span class="badge badge-primary">Aldhy Trisnaldi</span></h6></td>
-                                        <td class="text-right" width="120px">
-                                            @can('article-update')
-                                                <a class="btn btn-primary btn-icon icon-left btn-sm" href="#">Update</a>
-                                            @endcan
-                                            @can('article-delete')
-                                                <a class="btn btn-danger btn-icon icon-left btn-sm" href="#" id="article-delete">Delete</a>
-                                            @endcan
-                                        </td>
-                                    </tr>
+                                    @foreach ($article as $key => $a)
+                                        <tr>
+                                            <td>{{ $key+1 }}</td>
+                                            <td>{{ $a->article_title }}</td>
+                                            <td><h6><span class="badge badge-primary">{{ $a->category->category_name }}</span></h6></td>
+                                            <td><h6><span class="badge badge-primary">{{ $a->createdBy->username }}</span></h6></td>
+                                            <td class="text-right" width="120px">
+                                                @can('article-update')
+                                                    <a class="btn btn-primary btn-icon icon-left btn-sm" href="{{ route('article.edit', $a->id) }}">Update</a>
+                                                @endcan
+                                                @can('article-delete')
+                                                    <a class="btn btn-danger btn-icon icon-left btn-sm" href="{{ route('article.destroy', $a->id) }}" id="article-delete">Delete</a>
+                                                @endcan
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

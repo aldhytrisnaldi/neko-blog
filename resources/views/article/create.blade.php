@@ -8,51 +8,65 @@
         </div>
         <div class="section-body">
             {!! Form::open(array('route' => 'article.store', 'method' => 'POST', 'files' => true )) !!}
-            <div class="row">
-                <div class="col-9">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Form Article</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="form-group col-12">
-                                    <label for="article_title">Article Title</label><span class="text-danger pl-1">*</span>
-                                    {!! Form::text('article_title', null, array('placeholder' => 'Article Title', 'class' => 'form-control')) !!}
-                                </div>
-                                <div class="form-group col-12">
-                                    <label for="article_title">Article Description</label><span class="text-danger pl-1">*</span>
-                                    {!! Form::textarea('article_description', null, array('class' => 'form-control summernote')) !!}
-                                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Form Article</h4>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Form Images & Category</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div id="image-preview" class="image-preview">
+                            <div class="card-body">
+                                <div class="row">
                                     <div class="form-group col-12">
-                                        <label for="image-upload" id="image-label">Article Images</label><span class="text-danger pl-1">*</span>
-                                        {!! Form::file('article_images', array('class' => 'form-control', 'id' => 'image-upload')) !!}
+                                        <label for="article_title">Article Title</label><span class="text-danger pl-1">*</span>
+                                        {!! Form::text('article_title', null, array('placeholder' => 'Article Title', 'class' => 'form-control')) !!}
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label for="article_title">Article Description</label><span class="text-danger pl-1">*</span>
+                                        {!! Form::textarea('article_description', null, array('class' => 'form-control summernote')) !!}
                                     </div>
                                 </div>
-                                <div class="form-group col-12">
-                                    <label for="promotion_category">Category</label><span class="text-danger pl-1">*</span>
-                                    {!! Form::select('category[]', $category, [], array('class' => 'form-control select2')) !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Form Images & Category</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group col-12">
+                                        <div id="image-preview" class="image-preview">
+                                            <label for="image-upload" id="image-label">Article Images</label><span class="text-danger pl-1">*</span>
+                                            {!! Form::file('article_images', array('class' => 'form-control', 'id' => 'images')) !!}
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label for="promotion_category">Category</label><span class="text-danger pl-1">*</span>
+                                        {!! Form::select('article_category', $category, [], array('class' => 'form-control')) !!}
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary">Create</button>
+                                    </div>
                                 </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary">Create</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Images Preview</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img id="preview-image" src="{!! asset('assets/img/placeholder-images.jpg') !!}" alt="preview image" style="max-height: 200px;">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             {!! Form::close() !!}
         </div>
     </section>
