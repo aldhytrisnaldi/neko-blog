@@ -21,6 +21,9 @@ Route::resource('category', 'CategoryController');
 // PROMOTION
 Route::resource('promotion', 'PromotionController');
 
+// ARTICLE
+Route::resource('article', 'ArticleController');
+
 // USER
 Route::resource('user', 'UserController');
 

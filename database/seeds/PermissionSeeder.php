@@ -16,6 +16,10 @@ class PermissionSeeder extends Seeder
             'promotion-create',
             'promotion-update',
             'promotion-delete',
+            'article-list',
+            'article-create',
+            'article-update',
+            'article-delete',
         ];
 
         foreach ($permissions as $permission) {

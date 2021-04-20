@@ -357,6 +357,8 @@ __webpack_require__(/*! ../../node_modules/daterangepicker/daterangepicker */ ".
 __webpack_require__(/*! ../../node_modules/bootstrap-timepicker/js/bootstrap-timepicker */ "./node_modules/bootstrap-timepicker/js/bootstrap-timepicker.js");
 
 __webpack_require__(/*! ../../node_modules/jquery-easy-loading/dist/jquery.loading */ "./node_modules/jquery-easy-loading/dist/jquery.loading.js");
+
+__webpack_require__(/*! ../../node_modules/summernote/dist/summernote-bs4 */ "./node_modules/summernote/dist/summernote-bs4.js");
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just
@@ -404,6 +406,17 @@ $.ajaxSetup({
   headers: {
     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
   }
+});
+$(document).ready(function (e) {
+  $('#images').change(function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $('#preview-image').attr('src', e.target.result);
+    };
+
+    reader.readAsDataURL(this.files[0]);
+  });
 }); // Category Table
 
 $(document).ready(function () {
@@ -440,6 +453,31 @@ $(document).ready(function () {
     order: [0, 'asc']
   });
   $('#promotion-delete').on('click', function (event) {
+    event.preventDefault();
+    var url = $(this).attr('href');
+    swal({
+      title: 'Warning!',
+      text: 'Are you delete this data?',
+      icon: 'warning',
+      buttons: true,
+      dangerMode: true
+    }).then(function (value) {
+      if (value) {
+        window.location.href = url;
+      }
+    });
+  });
+}); // Article
+
+$(document).ready(function () {
+  $('#article_table').DataTable({
+    columnDefs: [{
+      orderable: false,
+      targets: 4
+    }],
+    order: [0, 'asc']
+  });
+  $('#article-delete').on('click', function (event) {
     event.preventDefault();
     var url = $(this).attr('href');
     swal({

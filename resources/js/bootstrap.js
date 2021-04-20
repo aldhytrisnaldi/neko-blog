@@ -28,6 +28,7 @@ require('../../node_modules/select2/dist/js/select2.full.min.js');
 require('../../node_modules/daterangepicker/daterangepicker');
 require('../../node_modules/bootstrap-timepicker/js/bootstrap-timepicker');
 require('../../node_modules/jquery-easy-loading/dist/jquery.loading');
+require('../../node_modules/summernote/dist/summernote-bs4');
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that

@@ -94,9 +94,15 @@ class PromotionController extends Controller
 
     public function show($id)
     {
-        $promotion  = Promotion::findOrFail($id);
-        $promotion->delete();
+        $promotion          = Promotion::findOrFail($id);
+        $promotion_find_id  = Promotion::whereId($id)->first();
+        $promotion_images   = $promotion_find_id->promotion_images;
+        $promotion_delete   = $promotion->delete();
 
-        return redirect('/promotion')->with('success', 'Success delete promotion');
+        if($promotion_delete)
+        {
+            unlink(public_path('images/promotion/' .$promotion_images));
+            return redirect('/promotion')->with('success', 'Success delete promotion');
+        }
     }
 }

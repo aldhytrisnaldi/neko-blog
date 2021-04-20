@@ -116,6 +116,7 @@
 @import "components/daterangepicker";
 @import "components/sweetalert";
 @import "components/select2";
+@import "components/summernote";
 
 /* 4. Theme Style */
 /* 4.1 Misc */
@@ -135,3 +136,4 @@
 @import '~select2/dist/css/select2.min.css';
 @import '~daterangepicker/daterangepicker.css';
 @import '~bootstrap-timepicker/css/bootstrap-timepicker.css';
+@import '~summernote/dist/summernote-bs4.css';
