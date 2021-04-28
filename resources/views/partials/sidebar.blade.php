@@ -18,6 +18,10 @@
             <li class="{{ request()->is('article') ? 'active' : request()->is('article/create') ? 'active' : request()->is('article/*/edit') ? 'active' : '' }}"><a class="nav-link" href="{{ url('/article') }}"><i class="fas fa-book"></i> <span>Article</span></a></li>
         @endcan
 
+        @can('doctor-list')
+            <li class="{{ request()->is('doctor') ? 'active' : request()->is('doctor/create') ? 'active' : request()->is('doctor/*/edit') ? 'active' : '' }}"><a class="nav-link" href="{{ url('/doctor') }}"><i class="fas fa-stethoscope"></i> <span>Doctor</span></a></li>
+        @endcan
+
         @can('category-list')
             <li class="{{ request()->is('category') ? 'active' : request()->is('category/create') ? 'active' : request()->is('category/*/edit') ? 'active' : '' }}"><a class="nav-link" href="{{ url('/category') }}"><i class="fas fa-folder"></i> <span>Category</span></a></li>
         @endcan

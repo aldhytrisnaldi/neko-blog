@@ -406,7 +406,8 @@ $.ajaxSetup({
   headers: {
     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
   }
-});
+}); // Images Viewer
+
 $(document).ready(function (e) {
   $('#images').change(function () {
     var reader = new FileReader();
@@ -416,6 +417,31 @@ $(document).ready(function (e) {
     };
 
     reader.readAsDataURL(this.files[0]);
+  });
+}); // Article
+
+$(document).ready(function () {
+  $('#article_table').DataTable({
+    columnDefs: [{
+      orderable: false,
+      targets: 4
+    }],
+    order: [0, 'asc']
+  });
+  $('#article-delete').on('click', function (event) {
+    event.preventDefault();
+    var url = $(this).attr('href');
+    swal({
+      title: 'Warning!',
+      text: 'Are you delete this data?',
+      icon: 'warning',
+      buttons: true,
+      dangerMode: true
+    }).then(function (value) {
+      if (value) {
+        window.location.href = url;
+      }
+    });
   });
 }); // Category Table
 
@@ -442,17 +468,17 @@ $(document).ready(function () {
       }
     });
   });
-}); // Promotion Table
+}); // Doctor
 
 $(document).ready(function () {
-  $('#promotion_table').DataTable({
+  $('#doctor_table').DataTable({
     columnDefs: [{
       orderable: false,
-      targets: 3
+      targets: 4
     }],
     order: [0, 'asc']
   });
-  $('#promotion-delete').on('click', function (event) {
+  $('#doctor-delete').on('click', function (event) {
     event.preventDefault();
     var url = $(this).attr('href');
     swal({
@@ -467,17 +493,17 @@ $(document).ready(function () {
       }
     });
   });
-}); // Article
+}); // Promotion Table
 
 $(document).ready(function () {
-  $('#article_table').DataTable({
+  $('#promotion_table').DataTable({
     columnDefs: [{
       orderable: false,
-      targets: 4
+      targets: 3
     }],
     order: [0, 'asc']
   });
-  $('#article-delete').on('click', function (event) {
+  $('#promotion-delete').on('click', function (event) {
     event.preventDefault();
     var url = $(this).attr('href');
     swal({

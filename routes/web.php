@@ -4,10 +4,6 @@ Auth::routes([
     'register'  => false
 ]);
 
-Route::get('/', function () {
-    return redirect(route('login'));
-});
-
 Route::middleware('auth')->get('logout', function() {
     Auth::logout();
     return redirect(route('login'))->withInfo('You have successfully logged out!');
@@ -24,6 +20,9 @@ Route::resource('promotion', 'PromotionController');
 // ARTICLE
 Route::resource('article', 'ArticleController');
 
+//
+Route::resource('doctor', 'DoctorController');
+
 // USER
 Route::resource('user', 'UserController');
 
@@ -31,4 +30,4 @@ Route::resource('user', 'UserController');
 Route::resource('role', 'RoleController');
 
 // HOME
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
