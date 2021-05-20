@@ -31,8 +31,9 @@ class PromotionController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'promotion_name'    => 'required|unique:promotions',
-            'promotion_images'  => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'promotion_name'        => 'required|unique:promotions',
+            'promotion_description' => 'required',
+            'promotion_images'      => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $image = $request->file('promotion_images');
@@ -40,8 +41,9 @@ class PromotionController extends Controller
         $images_name = rand() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images/promotion'), $images_name);
         $data = array(
-            'promotion_name'    =>   $request->promotion_name,
-            'promotion_images'  =>   $images_name
+            'promotion_name'        => $request->promotion_name,
+            'promotion_description' => $request->promotion_description,
+            'promotion_images'      => $images_name
         );
 
         Promotion::create($data);
@@ -63,8 +65,9 @@ class PromotionController extends Controller
         if($image != '')
         {
             $request->validate([
-                'promotion_name'    =>  'required',
-                'promotion_images'  =>  'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+                'promotion_name'        => 'required',
+                'promotion_description' => 'required',
+                'promotion_images'      => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             ]);
 
             $images_name = rand() . '.' . $image->getClientOriginalExtension();
@@ -73,13 +76,15 @@ class PromotionController extends Controller
         else
         {
             $request->validate([
-                'promotion_name'    =>  'required',
+                'promotion_name'        => 'required',
+                'promotion_description' => 'required',
             ]);
         }
 
         $data = array(
-            'promotion_name'    =>   $request->promotion_name,
-            'promotion_images'  =>   $images_name
+            'promotion_name'        => $request->promotion_name,
+            'promotion_description' => $request->promotion_description,
+            'promotion_images'      => $images_name
         );
 
         Promotion::whereId($id)->update($data);

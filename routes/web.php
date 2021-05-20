@@ -31,3 +31,5 @@ Route::resource('role', 'RoleController');
 
 // HOME
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('promosi/{promosi}', 'PromosiController@promosi');

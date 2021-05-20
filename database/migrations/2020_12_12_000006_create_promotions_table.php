@@ -12,6 +12,7 @@ class CreatePromotionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('promotion_name');
             $table->text('promotion_slug');
+            $table->text('promotion_description');
             $table->text('promotion_images')->nullable();
             $table->integer('created_by');
             $table->integer('updated_by');

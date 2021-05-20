@@ -14,6 +14,7 @@ class Promotion extends Model
         'promotion_name',
         'promotion_images',
         'promotion_slug',
+        'promotion_description',
         'created_by',
         'updated_by'
     ];
