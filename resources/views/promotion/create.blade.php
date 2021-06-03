@@ -20,6 +20,10 @@
                                         <label for="promotion_name">Promotion Name</label><span class="text-danger pl-1">*</span>
                                         {!! Form::text('promotion_name', null, array('placeholder' => 'Promotion Name', 'class' => 'form-control')) !!}
                                     </div>
+                                    <div class="form-group col-12">
+                                        <label for="promotion_description">Promotion Description</label><span class="text-danger pl-1">*</span>
+                                        {!! Form::textarea('promotion_description', null, array('class' => 'form-control summernote')) !!}
+                                    </div>
                                     <div class="col-12">
                                         <div class="custom-file">
                                             <label class="custom-file-label" for="promotion_images">Promotion Images</label>

@@ -38,83 +38,12 @@
                     <div class="col-lg-8 col-md-6">
                         <div class="card blog blog-detail border-0 shadow rounded">
                             <img src="{!! asset('images/promotion/'.$p->promotion_images) !!}" class="img-fluid rounded-top" alt="">
-                            <div class="card-body content">
-                                <p class="text-muted mt-3">The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century. Lorem Ipsum is composed in a pseudo-Latin language which more or less corresponds to 'proper' Latin. It contains a series of real Latin words. This ancient dummy text is also incomprehensible, but it imitates the rhythm of most European languages in Latin script. </p>
-                                <p class="text-muted">The advantage of its Latin origin and the relative meaninglessness of Lorum Ipsum is that the text does not attract attention to itself or distract the viewer's attention from the layout.</p>
+                            <div class="card-body content text-muted">
+                                {!! $p->promotion_description !!}
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                        <div class="card border-0 sidebar sticky-bar rounded shadow">
-                            <div class="card-body">
-                                <div class="widget mb-4 pb-2">
-                                    <h4 class="widget-title">Search</h4>
-                                    <div id="search2" class="widget-search mt-4 mb-0">
-                                        <form role="search" method="get" id="searchform" class="searchform">
-                                            <div>
-                                                <input type="text" class="border rounded" name="s" id="s" placeholder="Search Keywords...">
-                                                <input type="submit" id="searchsubmit" value="Search">
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="widget mb-4 pb-2">
-                                    <h4 class="widget-title">Catagories</h4>
-                                    <ul class="list-unstyled mt-4 mb-0 blog-catagories">
-                                        <li><a href="jvascript:void(0)">Finance</a> <span class="float-right">13</span></li>
-                                        <li><a href="jvascript:void(0)">Business</a> <span class="float-right">09</span></li>
-                                        <li><a href="jvascript:void(0)">Blog</a> <span class="float-right">18</span></li>
-                                        <li><a href="jvascript:void(0)">Corporate</a> <span class="float-right">20</span></li>
-                                        <li><a href="jvascript:void(0)">Investment</a> <span class="float-right">22</span></li>
-                                    </ul>
-                                </div>
-                                <div class="widget mb-4 pb-2">
-                                    <h4 class="widget-title">Recent Post</h4>
-                                    <div class="mt-4">
-                                        <div class="clearfix post-recent">
-                                            <div class="post-recent-thumb float-left"> <a href="jvascript:void(0)"> <img alt="img" src="images/blog/07.jpg" class="img-fluid rounded"></a></div>
-                                            <div class="post-recent-content float-left"><a href="jvascript:void(0)">Consultant Business</a><span class="text-muted mt-2">15th June, 2019</span></div>
-                                        </div>
-                                        <div class="clearfix post-recent">
-                                            <div class="post-recent-thumb float-left"> <a href="jvascript:void(0)"> <img alt="img" src="images/blog/08.jpg" class="img-fluid rounded"></a></div>
-                                            <div class="post-recent-content float-left"><a href="jvascript:void(0)">Look On The Glorious Balance</a> <span class="text-muted mt-2">15th June, 2019</span></div>
-                                        </div>
-                                        <div class="clearfix post-recent">
-                                            <div class="post-recent-thumb float-left"> <a href="jvascript:void(0)"> <img alt="img" src="images/blog/01.jpg" class="img-fluid rounded"></a></div>
-                                            <div class="post-recent-content float-left"><a href="jvascript:void(0)">Research Financial.</a> <span class="text-muted mt-2">15th June, 2019</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="widget mb-4 pb-2">
-                                    <h4 class="widget-title">Tags Cloud</h4>
-                                    <div class="tagcloud mt-4">
-                                        <a href="jvascript:void(0)" class="rounded">Business</a>
-                                        <a href="jvascript:void(0)" class="rounded">Finance</a>
-                                        <a href="jvascript:void(0)" class="rounded">Marketing</a>
-                                        <a href="jvascript:void(0)" class="rounded">Fashion</a>
-                                        <a href="jvascript:void(0)" class="rounded">Bride</a>
-                                        <a href="jvascript:void(0)" class="rounded">Lifestyle</a>
-                                        <a href="jvascript:void(0)" class="rounded">Travel</a>
-                                        <a href="jvascript:void(0)" class="rounded">Beauty</a>
-                                        <a href="jvascript:void(0)" class="rounded">Video</a>
-                                        <a href="jvascript:void(0)" class="rounded">Audio</a>
-                                    </div>
-                                </div>
-                                <div class="widget">
-                                    <h4 class="widget-title">Follow us</h4>
-                                    <ul class="list-unstyled social-icon mb-0 mt-4">
-                                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
-                                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
-                                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
-                                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="linkedin" class="fea icon-sm fea-social"></i></a></li>
-                                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="github" class="fea icon-sm fea-social"></i></a></li>
-                                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="youtube" class="fea icon-sm fea-social"></i></a></li>
-                                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="gitlab" class="fea icon-sm fea-social"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @include('front.partials.widget')
                 </div>
             </div>
         </section>

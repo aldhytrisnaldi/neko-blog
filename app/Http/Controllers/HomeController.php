@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\Promotion;
 use Illuminate\Http\Request;
 
@@ -9,8 +10,9 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $article    = Article::latest('id')->limit('1')->get();
         $promotion  = Promotion::latest('id')->limit('5')->get();
-        return view('front.home.index', compact('promotion'));
+        return view('front.home.index', compact('promotion','article'));
     }
 
     public function create()
