@@ -20,6 +20,7 @@
             <ul class="navigation-menu">
                 <li><a href="{{ url('/') }}">Beranda</a></li>
                 <li><a href="rsianuraida-doctor.html">Dokter Kami</a></li>
+                <li><a href="{{ url('promosi') }}">Promosi</a></li>
             </ul>
         </div>
     </div>

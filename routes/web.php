@@ -16,9 +16,11 @@ Route::resource('category', 'CategoryController');
 
 // PROMOTION
 Route::resource('promotion', 'PromotionController');
+Route::resource('promosi', 'PromosiController');
 
 // ARTICLE
 Route::resource('article', 'ArticleController');
+Route::resource('artikel', 'ArtikelController');
 
 //
 Route::resource('doctor', 'DoctorController');
