@@ -9,7 +9,7 @@ class PromosiController extends Controller
 {
     public function index()
     {
-        $data   = Promotion::latest('id')->get();
+        $data   = Promotion::orderBy('id', 'desc')->paginate(3);
         return view('front.promosi.index', compact('data'));
     }
 
