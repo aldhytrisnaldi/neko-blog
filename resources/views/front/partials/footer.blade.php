@@ -18,8 +18,8 @@
             <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
                 <h4 class="text-dark footer-head">Informasi</h4>
                 <ul class="list-unstyled footer-list mt-4">
-                    <li><a href="#" class="text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Artikel</a></li>
-                    <li><a href="#" class="text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Promosi</a></li>
+                    <li><a href="{{ url('artikel') }}" class="text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Artikel</a></li>
+                    <li><a href="{{ url('promosi') }}" class="text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Promosi</a></li>
                 </ul>
             </div>
             <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">

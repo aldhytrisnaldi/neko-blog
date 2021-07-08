@@ -19,8 +19,14 @@
         <div id="navigation">
             <ul class="navigation-menu">
                 <li><a href="{{ url('/') }}">Beranda</a></li>
-                <li><a href="rsianuraida-doctor.html">Dokter Kami</a></li>
-                <li><a href="{{ url('promosi') }}">Promosi</a></li>
+                <li><a href="#">Dokter Kami</a></li>
+                <li class="has-submenu">
+                    <a href="javascript:void(0)">Informasi</a><span class="menu-arrow"></span>
+                    <ul class="submenu">
+                        <li><a href="{{ url('promosi') }}">Promosi</a></li>
+                        <li><a href="{{ url('artikel') }}">Artikel</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

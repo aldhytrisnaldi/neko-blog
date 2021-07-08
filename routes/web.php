@@ -17,10 +17,12 @@ Route::resource('category', 'CategoryController');
 // PROMOTION
 Route::resource('promotion', 'PromotionController');
 Route::resource('promosi', 'PromosiController');
+Route::get('promosi/{promosi}', 'PromosiController@promosi');
 
 // ARTICLE
 Route::resource('article', 'ArticleController');
 Route::resource('artikel', 'ArtikelController');
+Route::get('artikel/{artikel}', 'ArtikelController@artikel');
 
 //
 Route::resource('doctor', 'DoctorController');
@@ -34,4 +36,3 @@ Route::resource('role', 'RoleController');
 // HOME
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('promosi/{promosi}', 'PromosiController@promosi');

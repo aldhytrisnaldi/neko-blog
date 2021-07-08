@@ -1,7 +1,7 @@
 @extends('front.layouts.app')
 
-@foreach ( $data as $p )
-    @section('title', $p->promotion_name)
+@foreach ( $data as $a )
+    @section('title', $a->article_title)
 
     @section('content')
         <section class="bg-half d-table w-100" style="background: url('{!! asset('assets/images/hospital.jpg') !!}') center center;">
@@ -10,13 +10,13 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
                         <div class="page-next-level">
-                            <h4 class="title text-white title-dark"> Promosi </h4>
+                            <h4 class="title text-white title-dark"> Artikel </h4>
                             <div class="page-next">
                                 <nav aria-label="breadcrumb" class="d-inline-block">
                                     <ul class="breadcrumb bg-white rounded shadow mb-0">
                                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Promosi</li>
-                                        <li class="breadcrumb-item active" aria-current="page">{{ $p->promotion_name }}</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Artikel</li>
+                                        <li class="breadcrumb-item active" aria-current="page">{{ $a->article_title }}</li>
                                     </ul>
                                 </nav>
                             </div>
@@ -37,9 +37,9 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-6">
                         <div class="card blog blog-detail border-0 shadow rounded">
-                            <img src="{!! asset('images/promotion/'.$p->promotion_images) !!}" class="img-fluid rounded-top" alt="">
+                            <img src="{!! asset('images/article/'.$a->article_images) !!}" class="img-fluid rounded-top" alt="">
                             <div class="card-body content text-muted">
-                                {!! $p->promotion_description !!}
+                                {!! $a->article_description !!}
                             </div>
                         </div>
                     </div>

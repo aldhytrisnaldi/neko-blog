@@ -2,42 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use Illuminate\Http\Request;
 
 class ArtikelController extends Controller
 {
     public function index()
     {
-        //
+        $data   = Article::orderBy('id', 'desc')->paginate(6);
+        return view('front.article.index', compact('data'));
     }
 
-    public function create()
+    public function artikel($slug)
     {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
+        $data   = Article::where('article_slug', $slug)->get();
+        return view('front.article.detail', compact('data'));
     }
 }
