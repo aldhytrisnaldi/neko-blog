@@ -15,11 +15,9 @@
             <div class="widget mb-4 pb-2">
                 <h4 class="widget-title">Catagories</h4>
                 <ul class="list-unstyled mt-4 mb-0 blog-catagories">
-                    <li><a href="jvascript:void(0)">Finance</a> <span class="float-right">13</span></li>
-                    <li><a href="jvascript:void(0)">Business</a> <span class="float-right">09</span></li>
-                    <li><a href="jvascript:void(0)">Blog</a> <span class="float-right">18</span></li>
-                    <li><a href="jvascript:void(0)">Corporate</a> <span class="float-right">20</span></li>
-                    <li><a href="jvascript:void(0)">Investment</a> <span class="float-right">22</span></li>
+                    @foreach ($category as $c)
+                        <li><a href=""></a>{{$c->category_name}} <span class="float-right">{{$c->categories->count() }}</span></li>
+                    @endforeach
                 </ul>
             </div>
             <div class="widget mb-4 pb-2">

@@ -25,6 +25,11 @@ class Category extends Model
         return $this->belongsTo(User::class, 'created_by');
     }
 
+    public function categories()
+    {
+        return $this->hasMany(Article::class, 'article_category');
+    }
+
     public function getSlugOptions() : SlugOptions
     {
         return SlugOptions::create()
