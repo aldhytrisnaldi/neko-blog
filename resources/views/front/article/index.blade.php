@@ -13,7 +13,7 @@
                         <div class="page-next">
                             <nav aria-label="breadcrumb" class="d-inline-block">
                                 <ul class="breadcrumb bg-white rounded shadow mb-0">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Artikel</li>
                                 </ul>
                             </nav>
@@ -42,6 +42,10 @@
                             </div>
                             <div class="card-body content">
                                 <h5><a href="artikel/{{$a->article_slug}}" class="card-title title text-dark">{{$a->article_title}}</a></h5>
+                            </div>
+                            <div class="author">
+                                <small class="text-light user d-block"><i class="mdi mdi-account"></i> {{ $a->createdBy->username }}</small>
+                                <small class="text-light date"><i class="mdi mdi-calendar-check"></i> {{ $a->createdBy->created_at->format('D, d M Y - H:i') }}</small>
                             </div>
                         </div>
                     </div>

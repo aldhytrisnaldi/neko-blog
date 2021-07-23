@@ -11,11 +11,15 @@
                     <div class="col-lg-12 text-center">
                         <div class="page-next-level">
                             <h4 class="title text-white title-dark"> Artikel </h4>
+                            <ul class="list-unstyled mt-4">
+                                <li class="list-inline-item h6 user text-white mr-2"><i class="mdi mdi-account"></i> {{ $a->createdBy->username }}</li>
+                                <li class="list-inline-item h6 date text-white"><i class="mdi mdi-calendar-check"></i> {{ $a->createdBy->created_at->format('D, d M Y - H:i') }}</li>
+                            </ul>
                             <div class="page-next">
                                 <nav aria-label="breadcrumb" class="d-inline-block">
                                     <ul class="breadcrumb bg-white rounded shadow mb-0">
-                                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Artikel</li>
+                                        <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="/artikel">Artikel</a></li>
                                         <li class="breadcrumb-item active" aria-current="page">{{ $a->article_title }}</li>
                                     </ul>
                                 </nav>

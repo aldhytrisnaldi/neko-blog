@@ -23,8 +23,8 @@
                 <li class="has-submenu">
                     <a href="javascript:void(0)">Informasi</a><span class="menu-arrow"></span>
                     <ul class="submenu">
-                        <li><a href="{{ url('promosi') }}">Promosi</a></li>
                         <li><a href="{{ url('artikel') }}">Artikel</a></li>
+                        <li><a href="{{ url('promosi') }}">Promosi</a></li>
                     </ul>
                 </li>
             </ul>

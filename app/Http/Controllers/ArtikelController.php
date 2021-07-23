@@ -16,8 +16,9 @@ class ArtikelController extends Controller
 
     public function artikel($slug)
     {
-        $data       = Article::where('article_slug', $slug)->get();
-        $category   = Category::with('categories')->get();
-        return view('front.article.detail', compact('data', 'category'));
+        $data               = Article::where('article_slug', $slug)->get();
+        $category           = Category::with('categories')->get();
+        $recent_article     = Article::latest('id')->limit('4')->get();
+        return view('front.article.detail', compact('data', 'category', 'recent_article'));
     }
 }
