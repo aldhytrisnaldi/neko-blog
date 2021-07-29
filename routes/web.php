@@ -23,6 +23,7 @@ Route::get('promosi/{promosi}', 'PromosiController@promosi');
 Route::resource('article', 'ArticleController');
 Route::resource('artikel', 'ArtikelController');
 Route::get('artikel/{artikel}', 'ArtikelController@artikel');
+Route::get('cari', 'ArtikelController@search')->name('search');
 
 //
 Route::resource('doctor', 'DoctorController');

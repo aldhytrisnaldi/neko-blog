@@ -21,4 +21,11 @@ class ArtikelController extends Controller
         $recent_article     = Article::latest('id')->limit('4')->get();
         return view('front.article.detail', compact('data', 'category', 'recent_article'));
     }
+
+    public function search(Request $request)
+    {
+        $keyword    = $request->input('keyword');
+        $search     = Article::query()->where('article_title', 'LIKE', "%{$keyword}%")->orWhere('article_description', 'LIKE', "%{$keyword}%")->orderBy('article_title', 'desc')->paginate(6);
+        return view('front.article.search', compact('search', 'keyword'));
+    }
 }
