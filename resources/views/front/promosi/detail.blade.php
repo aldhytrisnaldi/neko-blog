@@ -38,7 +38,7 @@
                     <div class="col-lg-8 col-md-6">
                         <div class="card blog blog-detail border-0 shadow rounded">
                             <img src="{!! asset('images/promotion/'.$p->promotion_images) !!}" class="img-fluid rounded-top" alt="">
-                            <div class="card-body content text-muted">
+                            <div class="card-body content">
                                 {!! $p->promotion_description !!}
                             </div>
                         </div>

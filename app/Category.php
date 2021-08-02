@@ -25,6 +25,11 @@ class Category extends Model
         return $this->belongsTo(User::class, 'created_by');
     }
 
+    public function artikel()
+    {
+        return $this->belongsTo(Article::class, 'id');
+    }
+
     public function categories()
     {
         return $this->hasMany(Article::class, 'article_category');

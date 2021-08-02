@@ -28,4 +28,10 @@ class ArtikelController extends Controller
         $search     = Article::query()->where('article_title', 'LIKE', "%{$keyword}%")->orWhere('article_description', 'LIKE', "%{$keyword}%")->orderBy('article_title', 'desc')->paginate(6);
         return view('front.article.search', compact('search', 'keyword'));
     }
+
+    public function kategori($kategori)
+    {
+        $kategori   = Category::where('category_slug', $kategori)->orderBy('id', 'desc')->paginate(6);
+        return view('front.article.kategori', compact('kategori'));
+    }
 }

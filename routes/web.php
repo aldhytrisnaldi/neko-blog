@@ -24,6 +24,7 @@ Route::resource('article', 'ArticleController');
 Route::resource('artikel', 'ArtikelController');
 Route::get('artikel/{artikel}', 'ArtikelController@artikel');
 Route::get('cari', 'ArtikelController@search')->name('search');
+Route::get('kategori/{kategori}', 'ArtikelController@kategori');
 
 //
 Route::resource('doctor', 'DoctorController');
