@@ -9,7 +9,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12 text-center">
                     <div class="page-next-level">
-                        <h4 class="title text-white title-dark"> Kategori </h4>
+                        <h4 class="title text-white title-dark">Kategori</h4>
                         <div class="page-next">
                             <nav aria-label="breadcrumb" class="d-inline-block">
                                 <ul class="breadcrumb bg-white rounded shadow mb-0">
@@ -37,11 +37,11 @@
                     <div class="col-lg-4 col-md-6 mb-4 pb-2">
                         <div class="card blog rounded border-0 shadow overflow-hidden">
                             <div class="position-relative">
-                                <img src="{!! asset('images/article/'.$k->artikel->article_images) !!}" class="card-img-top" alt="...">
+                                <img src="{!! asset('images/article/'.$k->article_images) !!}" class="card-img-top" alt="...">
                                 <div class="overlay rounded-top bg-dark"></div>
                             </div>
                             <div class="card-body content">
-                                <h5><a href="/artikel/{{$k->artikel->article_slug}}" class="card-title title text-dark">{{$k->artikel->article_title}}</a></h5>
+                                <h5><a href="/artikel/{{$k->article_slug}}" class="card-title title text-dark">{{$k->categories[1]->article_title}}</a></h5>
                             </div>
                             <div class="author">
                                 <small class="text-light user d-block"><i class="mdi mdi-account"></i> {{ $k->createdBy->username }}</small>
@@ -56,4 +56,5 @@
             </div>
         </div>
     </section>
+    {{-- {{dd($k->categories)}} --}}
 @endsection

@@ -12,14 +12,14 @@
                     {!! Form::close() !!}
                 </div>
             </div>
-            <div class="widget mb-4 pb-2">
+            {{-- <div class="widget mb-4 pb-2">
                 <h4 class="widget-title">Kategori</h4>
                 <ul class="list-unstyled mt-4 mb-0 blog-catagories">
                     @foreach ($category as $c)
                         <li><a href="{{ url('kategori/'.$c->category_slug) }}">{{$c->category_name}}</a><span class="float-right">({{$c->categories->count() }})</span></li>
                     @endforeach
                 </ul>
-            </div>
+            </div> --}}
             <div class="widget mb-4 pb-2">
                 <h4 class="widget-title">Artikel Terbaru</h4>
                 <div class="mt-4">

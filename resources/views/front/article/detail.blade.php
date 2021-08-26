@@ -43,7 +43,8 @@
                         <div class="card blog blog-detail border-0 shadow rounded">
                             <img src="{!! asset('images/article/'.$a->article_images) !!}" class="img-fluid rounded-top" alt="">
                             <div class="card-body content">
-                                <h6><i class="mdi mdi-folder text-primary mr-1"></i><a href="{{ url('kategori/'.$a->category->category_slug)}}" class="text-primary">{!! $a->category->category_name !!}</a></h6>
+                                {{-- <h6><i class="mdi mdi-folder text-primary mr-1"></i><a href="{{ url('kategori/'.$a->category->category_slug)}}" class="text-primary">{!! $a->category->category_name !!}</a></h6> --}}
+                                <h6><i class="mdi mdi-folder text-primary mr-1"></i><a href="#" class="text-primary">{!! $a->category->category_name !!}</a></h6>
                                 {!! $a->article_description !!}
                             </div>
                         </div>

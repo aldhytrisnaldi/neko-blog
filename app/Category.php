@@ -12,6 +12,7 @@ class Category extends Model
 
     protected $fillable = [
         'category_name',
+        'category_slug',
         'created_by',
         'updated_by'
     ];
@@ -23,11 +24,6 @@ class Category extends Model
     public function createdBy()
     {
         return $this->belongsTo(User::class, 'created_by');
-    }
-
-    public function artikel()
-    {
-        return $this->belongsTo(Article::class, 'id');
     }
 
     public function categories()

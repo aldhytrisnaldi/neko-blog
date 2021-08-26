@@ -29,9 +29,9 @@ class ArtikelController extends Controller
         return view('front.article.search', compact('search', 'keyword'));
     }
 
-    public function kategori($kategori)
+    public function kategori($slug)
     {
-        $kategori   = Category::where('category_slug', $kategori)->orderBy('id', 'desc')->paginate(6);
+        $kategori   = Category::where('category_slug', $slug)->orderBy('id', 'desc')->paginate(6);
         return view('front.article.kategori', compact('kategori'));
     }
 }
