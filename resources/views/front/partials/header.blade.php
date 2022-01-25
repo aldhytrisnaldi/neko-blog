@@ -2,7 +2,7 @@
     <div class="container">
         <div>
             <a class="logo" href="{{ url('/') }}">
-                <img src="https://rsianuraida.com/assets/images/logo_nuraida.png" height="40" alt="">
+                <img src="{{ asset('images/logo/nekoproject.svg') }}" width="200px" alt="logo">
             </a>
         </div>
         <div class="menu-extras">
@@ -18,14 +18,11 @@
         </div>
         <div id="navigation">
             <ul class="navigation-menu">
-                <li><a href="{{ url('/') }}">Beranda</a></li>
-                <li><a href="#">Dokter Kami</a></li>
-                <li class="has-submenu">
-                    <a href="javascript:void(0)">Informasi</a><span class="menu-arrow"></span>
-                    <ul class="submenu">
-                        <li><a href="{{ url('artikel') }}">Artikel</a></li>
-                        <li><a href="{{ url('promosi') }}">Promosi</a></li>
-                    </ul>
+                <li>
+                    <a href="{{ url('/') }}">Home</a>
+                </li>
+                <li>
+                    <a href="#service">Service</a>
                 </li>
             </ul>
         </div>
